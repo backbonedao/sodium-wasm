@@ -2,7 +2,9 @@ node_modules
 build
 tmp
 lib
+prebuilds/
 deps/libsodium*
 deps/unix
 deps/win
 deps/tmp
+deps/wasm32

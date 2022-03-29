@@ -15,6 +15,7 @@
 	},
 	"types": "types",
 	"main": "lib/index.js",
+	"browser": "lib/universal.js",
 	"scripts": {
 		"build": "swc src -d lib",
 		"dev": "node-gyp rebuild",
@@ -41,7 +42,7 @@
 		"tape": "^5.3.1"
 	},
 	"peerDependencies": {
-		"react": "^17.0.2",
-		"react-native": "^0.67.4"
+		"react": "*",
+		"react-native": "*"
 	}
 }
