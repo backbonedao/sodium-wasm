@@ -5,11 +5,11 @@
   'targets': [
     {
       'target_name': 'sodium',
-      'include_dirs' : [
+      'include_dirs': [
         '<!(node deps/bin.js --print-include)'
       ],
       'sources': [
-        'binding.c'
+        'src/binding.c'
       ],
       'conditions': [
         ['OS=="win"', {
