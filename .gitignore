@@ -8,3 +8,8 @@ deps/unix
 deps/win
 deps/tmp
 deps/wasm32
+deps/arm64-v8a
+deps/armeabi-v7a
+deps/x86
+deps/x86_64
+android/.cxx

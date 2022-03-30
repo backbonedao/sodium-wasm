@@ -16,6 +16,7 @@
 	"types": "types",
 	"main": "lib/index.js",
 	"browser": "lib/universal.js",
+	"react-native": "src/universal.ts",
 	"scripts": {
 		"build": "swc src -d lib",
 		"dev": "node-gyp rebuild",
