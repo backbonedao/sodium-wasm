@@ -1,5 +1,5 @@
 {
-	"name": "@void/sodium-universal",
+	"name": "@screamingvoid/sodium-universal",
 	"version": "0.1.0",
 	"description": "Low level bindings for libsodium that work across all platforms",
 	"contributors": [
