@@ -1,0 +1,15 @@
+android/.cxx
+android/build
+android/lib
+build/
+deps/libsodium-1.0.18
+deps/unix
+deps/wasm32
+libsodium/
+test/
+.gitignore
+.gitmodules
+.swcrc
+android-build.sh
+functions.txt
+wasm-build.sh
