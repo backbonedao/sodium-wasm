@@ -1,10 +1,23 @@
-# sodium-native
-[![build status](https://travis-ci.org/sodium-friends/sodium-native.svg?branch=master)](https://travis-ci.org/sodium-friends/sodium-native)
+# @void/sodium-universal
 
-Low level bindings for [libsodium](https://github.com/jedisct1/libsodium).
+Low level bindings for [libsodium](https://github.com/jedisct1/libsodium) that
+work across all platforms.
+
+This is a fork of [sodium-native](https://github.com/sodium-friends/sodium-native)
+adding support for web, NativeScript, and React Native.
+
+While there is [sodium-universal](https://github.com/sodium-friends/sodium-universal)
+that aims to support additional platforms, it uses [sodium-javascript](https://github.com/sodium-friends/sodium-javascript) for non-node environments.
+
+Pure javascript implementation of libsodium is hardly practical and existing implementation
+is woefully incomplete.
+
+`@void/sodium-universal` uses API-compatible wasm build on the web/NativeScript,
+and custom JSI module on React Native, running the original libsodium code across
+all platforms.
 
 ```
-npm install sodium-native
+npm install @void/sodium-universal
 ```
 
 The goal of this project is to be thin, stable, unopionated wrapper around libsodium.
@@ -19,7 +32,7 @@ This also makes this library useful as a foundation for more high level crypto a
 ## Usage
 
 ``` js
-var sodium = require('sodium-native')
+var sodium = require('@void/sodium-universal')
 
 var nonce = Buffer.alloc(sodium.crypto_secretbox_NONCEBYTES)
 var key = sodium.sodium_malloc(sodium.crypto_secretbox_KEYBYTES) // secure buffer
