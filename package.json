@@ -1,6 +1,6 @@
 {
 	"name": "@screamingvoid/sodium-universal",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Low level bindings for libsodium that work across all platforms",
 	"contributors": [
 		"Tomas Ravinskas <tomas.rav@gmail.com> (https://tomasrav.me)",
