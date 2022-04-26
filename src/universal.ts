@@ -1,5 +1,6 @@
 import { Buffer } from "buffer";
 import * as Const from "./constants";
+import * as Mem from "./memory";
 import * as Sodium from "./Sodium";
 
 export function crypto_generichash_batch(
@@ -43,3 +44,11 @@ export function crypto_generichash_instance(
 export * from "./Sodium";
 export * from "./constants";
 export * from "./memory";
+
+export default {
+	...Sodium,
+	...Const,
+	...Mem,
+	crypto_generichash_batch,
+	crypto_generichash_instance,
+};
