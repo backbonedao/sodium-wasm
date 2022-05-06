@@ -129,6 +129,8 @@ vector<PropNameID> SodiumHostObject::getPropertyNames(Runtime& runtime) {
 	result.push_back(PropNameID::forUtf8(runtime, "crypto_sign_ed25519_sk_to_pk"));
 	result.push_back(PropNameID::forUtf8(runtime, "crypto_sign_ed25519_pk_to_curve25519"));
 	result.push_back(PropNameID::forUtf8(runtime, "crypto_sign_ed25519_sk_to_curve25519"));
+	result.push_back(PropNameID::forUtf8(runtime, "crypto_stream"));
+	result.push_back(PropNameID::forUtf8(runtime, "crypto_stream_xor"));
 	result.push_back(PropNameID::forUtf8(runtime, "crypto_stream_chacha20"));
 	result.push_back(PropNameID::forUtf8(runtime, "crypto_stream_chacha20_xor"));
 	result.push_back(PropNameID::forUtf8(runtime, "crypto_stream_chacha20_xor_ic"));
@@ -1489,6 +1491,27 @@ Value SodiumHostObject::get(Runtime& runtime, const PropNameID& propNameId) {
 			return Value::undefined();
 		};
 		return Function::createFromHostFunction(runtime, PropNameID::forUtf8(runtime, "crypto_sign_ed25519_sk_to_curve25519"), 2, sign_ed25519_sk_to_curve25519);
+	}
+	if (propName == "crypto_stream") {
+		auto stream = [](Runtime& runtime, const Value&, const Value* arguments, size_t) -> Value {
+			auto c = Uint8Array(runtime, arguments[0]);
+			auto n = Uint8Array(runtime, arguments[1]);
+			auto k = Uint8Array(runtime, arguments[2]);
+			crypto_stream(c.toArray(runtime), c.byteLength(runtime), n.toArray(runtime), k.toArray(runtime));
+			return Value::undefined();
+		};
+		return Function::createFromHostFunction(runtime, PropNameID::forUtf8(runtime, "crypto_stream"), 3, stream);
+	}
+	if (propName == "crypto_stream_xor") {
+		auto stream_xor = [](Runtime& runtime, const Value&, const Value* arguments, size_t) -> Value {
+			auto c = Uint8Array(runtime, arguments[0]);
+			auto m = Uint8Array(runtime, arguments[1]);
+			auto n = Uint8Array(runtime, arguments[2]);
+			auto k = Uint8Array(runtime, arguments[3]);
+			crypto_stream_xor(c.toArray(runtime), m.toArray(runtime), m.byteLength(runtime), n.toArray(runtime), k.toArray(runtime));
+			return Value::undefined();
+		};
+		return Function::createFromHostFunction(runtime, PropNameID::forUtf8(runtime, "crypto_stream_xor"), 4, stream_xor);
 	}
 	if (propName == "crypto_stream_chacha20") {
 		auto stream_chacha20 = [](Runtime& runtime, const Value&, const Value* arguments, size_t) -> Value {
