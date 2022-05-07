@@ -38,10 +38,10 @@
 		"@swc/cli": "^0.1.57",
 		"@swc/core": "^1.2.161",
 		"@types/react": "^17.0.43",
-		"@types/react-native": "^0.67.3",
+		"@types/react-native": "^0.67.6",
 		"prebuildify": "^4.2.1",
 		"react": "^17.0.2",
-		"react-native": "^0.67.4",
+		"react-native": "^0.68.1",
 		"sodium-test": "^0.8.0",
 		"sodium-vectors": "^1.0.0",
 		"tape": "^5.3.1"
