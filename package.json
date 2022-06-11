@@ -41,7 +41,7 @@
 		"@types/react-native": "^0.67.6",
 		"prebuildify": "^4.2.1",
 		"react": "^17.0.2",
-		"react-native": "^0.68.1",
+		"react-native": "^0.68.2",
 		"sodium-test": "^0.8.0",
 		"sodium-vectors": "^1.0.0",
 		"tape": "^5.3.1"
