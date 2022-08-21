@@ -7,7 +7,7 @@ export LDFLAGS="${LDFLAGS} -s DISABLE_EXCEPTION_CATCHING=1"
 export LDFLAGS="${LDFLAGS} -s ELIMINATE_DUPLICATE_FUNCTIONS=1"
 
 cd libsodium
-git clean -xdff
+#git clean -xdff
 ./autogen.sh
 emconfigure ./configure \
   --disable-shared \
@@ -40,5 +40,5 @@ emcc \
 echo "export const WASM = \`$(base64 deps/wasm32/libsodium.wasm)\`;" > src/wasm.ts
 
 cd libsodium
-git clean -xdff
+#git clean -xdff
 cd ..

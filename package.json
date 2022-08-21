@@ -1,17 +1,18 @@
 {
-	"name": "@screamingvoid/sodium-universal",
+	"name": "@backbonedao/sodium-wasm",
 	"version": "0.1.1",
-	"description": "Low level bindings for libsodium that work across all platforms",
+	"description": "WASM build of libsodium that work across all platforms",
 	"contributors": [
+		"Backbone DAO <team@backbonedao.com> (https://backbonedao.com)",
 		"Tomas Ravinskas <tomas.rav@gmail.com> (https://tomasrav.me)",
 		"Emil Bay <github@tixz.dk> (http://bayes.dk)",
 		"Mathias Buus <mathiasbuus@gmail.com> (https://mafinto.sh)",
 		"Christophe Diederichs <chm-diederichs@hyperdivision.dk>"
 	],
-	"license": "MIT",
+	"license": "AGPL-3.0-or-later",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OzymandiasTheGreat/sodium-universal.git"
+		"url": "https://github.com/backbonedao/sodium-wasm.git"
 	},
 	"types": "types",
 	"main": "lib/index.js",
@@ -25,10 +26,6 @@
 		"install": "node-gyp-build",
 		"prebuild": "prebuildify --napi --strip",
 		"prebuild-ia32": "prebuildify --arch=ia32 --napi --strip"
-	},
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org"
 	},
 	"dependencies": {
 		"buffer": "^6.0.3",
